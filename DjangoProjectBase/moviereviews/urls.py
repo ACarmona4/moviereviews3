@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from movie import views as movieViews
+from recommendations import views as recommendationsViews
+from movie import views as movieViews
 
 from django.conf.urls.static import static
 from django.conf import settings
@@ -27,7 +29,7 @@ urlpatterns = [
     path('about/', movieViews.about, name='about'),
     path('news/', include('news.urls')),
     path('statistics/', movieViews.statistics_view, name='statistics'),
-    path('recommendations/', movieViews.recommendations, name='recommendations'),
+    path('recommendations/', recommendationsViews.recommendations, name='recommendations'),
     path('signup/', movieViews.signup, name='signup'),
 ]
 
